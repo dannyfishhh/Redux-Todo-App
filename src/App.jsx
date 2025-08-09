@@ -1,61 +1,34 @@
-import './App.css'
-import delete_bin from './assets/delete_bin.svg' 
-import edit_square from './assets/edit_square.svg'
-import tick_circle from './assets/tick_circle.svg'
+import AddTodo from './components/AddTodo/AddTodo.jsx';
+import EditTodo from './components/EditTodo/EditTodo.jsx';
+import TodoItem from './components/TodoItem/TodoItem.jsx';
+import { useSelector, useDispatch } from 'react-redux';
+import { clearTodos } from './store/Slices/TodoSlice.jsx';
 
 function App() {
+
+  const todos = useSelector((state) => state.todos.todos);
+  const toggleEdit = useSelector((state) => state.todos.toggleEdit);
+  const isTodos = todos.length > 0;
+  const dispatch = useDispatch();
+
+  const handleClear = () => {
+    dispatch(clearTodos());
+  };
 
   return (
       <div className='container'>
         <div className='header'>
           <h1>My Todo List</h1>
         </div>
-        <div className='add-todo'>
-          <input type='text' placeholder='Add todo' className='todo-input' />
-          <button className='submit-button'>Add</button>
-        </div>
-        <div className='todo-item'>
-          <p>wake up</p>
-          <div className='buttons'>
-            <button className='done small_button'>
-              <img src={tick_circle} alt='Done' />
-            </button>
-            <button className='edit small_button'>
-              <img src={edit_square} alt='Edit' />
-            </button>
-            <button className='delete small_button'>
-              <img src={delete_bin} alt='Delete' />
-            </button>
-          </div>
-        </div>
-        <div className='todo-item'>
-          <p>have coffee</p>
-          <div className='buttons'>
-            <button className='done small_button'>
-              <img src={tick_circle} alt='Done' />
-            </button>
-            <button className='edit small_button'>
-              <img src={edit_square} alt='Edit' />
-            </button>
-            <button className='delete small_button'>
-              <img src={delete_bin} alt='Delete' />
-            </button>
-          </div>
-        </div>
-        <div className='todo-item'>
-          <p>play tennis</p>
-          <div className='buttons'>
-            <button className='done small_button'>
-              <img src={tick_circle} alt='Done' />
-            </button>
-            <button className='edit small_button'>
-              <img src={edit_square} alt='Edit' />
-            </button>
-            <button className='delete small_button'>
-              <img src={delete_bin} alt='Delete' />
-            </button>
-          </div>
-        </div>
+        {toggleEdit ? <AddTodo /> : <EditTodo />}
+        {todos.map((todo) => (
+          <TodoItem key={todo.id} todo={todo} />
+        ))}
+        
+        {isTodos ?
+          <button className='clear-button' onClick={handleClear}>Clear</button>
+          : null
+        }
       </div>
   )
 }

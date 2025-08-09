@@ -89,6 +89,12 @@ input[type='text']:hover {
     border:#1e1f26 2px solid;
 }
 
+.error-message {
+    color: red;
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+}
+
 .todo-item {
     display: flex;
     justify-content: space-between;
@@ -136,3 +142,26 @@ p {
     transform: scale(0.98);    /* slight shrink effect */
 }
 
+
+.clear-button {
+    height: 1.25rem;
+    margin-top: 1rem;
+    padding: 0 0.25rem;
+    background-color: #d9d9d9;
+    font-size: 0.75rem;
+    color: grey;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+.clear-button:hover {
+    border:#1e1f26 1px solid;
+}
+
+.clear-button:active{
+    transform: scale(0.98);
+    border:#1e1f26 2px solid;
+    background-color: #b0b0b0;
+    color: white;
+}
