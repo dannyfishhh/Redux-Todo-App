@@ -3,6 +3,7 @@ import EditTodo from './components/EditTodo/EditTodo.jsx';
 import TodoItem from './components/TodoItem/TodoItem.jsx';
 import { useSelector, useDispatch } from 'react-redux';
 import { clearTodos } from './store/Slices/TodoSlice.jsx';
+import React from 'react';
 
 function App() {
 

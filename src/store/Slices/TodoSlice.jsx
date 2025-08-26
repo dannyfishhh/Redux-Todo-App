@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const initialState = {
+export const initialState = {
   todos: [
     { id: 1, name: 'wake up', completed: false },
     { id: 2, name: 'have a coffee', completed: false },

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { submitEdit } from '../../store/Slices/TodoSlice';
+import React from 'react';
 
 
 function EditTodo() {
@@ -12,8 +13,6 @@ function EditTodo() {
       const handleClick = () => {
             setError('');
       }
-
-      
 
       const handleOnChange = (e) => {
             setInputValue(e.target.value);
