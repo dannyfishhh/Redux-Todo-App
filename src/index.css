@@ -165,3 +165,16 @@ p {
     background-color: #b0b0b0;
     color: white;
 }
+
+.completed-message {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+h2 {
+    font-size: 1.1rem;
+}
+
+.completed-text {
+    font-size: 0.85rem
+}
