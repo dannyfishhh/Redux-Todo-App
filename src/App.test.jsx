@@ -82,6 +82,27 @@ describe("App Component", () => {
             expect(clearButton).toBeInTheDocument();
         });
 
+        it("Should render the completed component", () => {
+            const preloadedState = {
+                todos: {
+                    todos: [],
+                    toggleEdit: false,
+                    todoToEdit: {}
+                }
+            };
+
+            mockStore = configureStore({
+                reducer: {
+                    todos: todoSlice
+                },
+                preloadedState: preloadedState
+            });
+
+            renderApp();
+            const completed = screen.getByText("Congratulations!");
+            expect(completed).toBeInTheDocument();
+        });
+
     });
 
     describe("Interactions", () => {
