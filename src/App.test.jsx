@@ -20,6 +20,7 @@ describe("App Component", () => {
 
     afterEach(() => {
         mockStore = null;
+        localStorage.clear();
     });
 
     const renderApp = () => {
@@ -80,6 +81,7 @@ describe("App Component", () => {
             const clearButton = screen.getByRole("button", { name: /clear/i });
             expect(clearButton).toBeInTheDocument();
         });
+
     });
 
     describe("Interactions", () => {

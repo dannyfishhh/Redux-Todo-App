@@ -23,6 +23,7 @@ beforeEach(() => {
 
 afterEach(() => {
     mockStore = null;
+    localStorage.clear();
 });
 
 describe("TodoItem Component", () => {
