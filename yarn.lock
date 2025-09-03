@@ -1704,6 +1704,13 @@ react-dom@^19.1.0:
   dependencies:
     scheduler "^0.26.0"
 
+react-error-boundary@^6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/react-error-boundary/-/react-error-boundary-6.0.0.tgz#a9e552146958fa77d873b587aa6a5e97544ee954"
+  integrity sha512-gdlJjD7NWr0IfkPlaREN2d9uUZUlksrfOx7SX62VRerwXbMY6ftGCIZua1VG1aXFNOimhISsTq+Owp725b9SiA==
+  dependencies:
+    "@babel/runtime" "^7.12.5"
+
 react-is@^17.0.1:
   version "17.0.2"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-17.0.2.tgz#e691d4a8e9c789365655539ab372762b0efb54f0"
