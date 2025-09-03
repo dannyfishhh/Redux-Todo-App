@@ -8,17 +8,22 @@ import React from 'react';
 function TodoItem (props) {
 
   const dispatch = useDispatch()
+
+  // destructures for cleaner code in the return section
   const id = props.todo.id;
   const style = props.todo.completed ? { textDecoration: 'line-through', color: 'gray' } : {};
+
+  // event listeners for the 3 buttons on a todo item (done / edit/ delete)
   const handleToggle = () => {
     dispatch(toggleTodo(id))
-  }
-  const handleDelete = () => {
-    dispatch(deleteTodo(id))
   }
   const handleEdit = () => {
     dispatch(editTodo(id))
   }
+  const handleDelete = () => {
+    dispatch(deleteTodo(id))
+  }
+  
 
   return ( 
     <div className='todo-item' data-testid="todo-item">

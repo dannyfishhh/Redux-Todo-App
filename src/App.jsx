@@ -8,15 +8,21 @@ import Completed from './components/Completed/Completed.jsx';
 
 function App() {
 
+  // selectors for todos information
   const todos = useSelector((state) => state.todos.todos);
   const toggleEdit = useSelector((state) => state.todos.toggleEdit);
+
+  // conditional for whether I render a clear button or completed message
   const isTodos = todos.length > 0;
+
   const dispatch = useDispatch();
 
+  // event listener for clear button
   const handleClear = () => {
     dispatch(clearTodos());
   };
 
+  // returns components based on the store state
   return (
       <div className='container'>
         <div className='header'>

@@ -6,9 +6,15 @@ import React from "react";
 function AddTodo() {
 
   const dispatch = useDispatch();
+
+  // sets state for the text input
   const [inputValue, setInputValue] = useState('');
+
+  // sets state for displaying error message
   const [error, setError] = useState('');
 
+
+  // event listeners
   const handleChange = (e) => {
     setInputValue(e.target.value);
   }
@@ -19,6 +25,8 @@ function AddTodo() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    // if input is not empty, create a new todo payload to dispatch with addTodo, or display error message
     if (inputValue.length > 0) {
       const newTodo = {
         id: Date.now(),

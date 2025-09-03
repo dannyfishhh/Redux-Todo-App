@@ -6,8 +6,16 @@ import '@testing-library/jest-dom';
 
 describe('Completed', () => {
     it('renders correctly', () => {
+
+        // render
         render(<Completed />);
-        expect(screen.getByText('Congratulations!')).toBeInTheDocument();
-        expect(screen.getByText('You have completed all your tasks!')).toBeInTheDocument();
+
+        // set up
+        const header = screen.getByText('Congratulations!')
+        const message = screen.getByText('You have completed all your tasks!');
+
+        // results
+        expect(header).toBeInTheDocument();
+        expect(message).toBeInTheDocument();
     });
 });

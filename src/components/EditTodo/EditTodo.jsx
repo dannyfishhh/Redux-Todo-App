@@ -3,13 +3,20 @@ import { useSelector, useDispatch } from 'react-redux';
 import { submitEdit } from '../../store/Slices/TodoSlice';
 import React from 'react';
 
+// a very similar component to AddTodo, but seperated for cleaner code
 
 function EditTodo() {
 
       const dispatch = useDispatch();
+
+      // selector to improve rendering ease based on store state
       const todoToEdit = useSelector((state) => state.todos.todoToEdit);
+
+      // local state for the input value and error message handling
       const [inputValue, setInputValue] = useState(todoToEdit.name || '');
       const [error, setError] = useState('');
+
+      // event listeners 
       const handleClick = () => {
             setError('');
       }
@@ -18,6 +25,7 @@ function EditTodo() {
             setInputValue(e.target.value);
       }
 
+      // if valid todo entered, dispatch the submitEdit action with the inputValue, or display error message
       const handleOnSubmit = (e) => {
             e.preventDefault();
             if (inputValue.length > 0) {

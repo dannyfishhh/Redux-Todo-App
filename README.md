@@ -1,12 +1,7 @@
-# React + Vite
+This application makes use of a Redux Store in order to handle state changes occuring in components throughout the application.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The default screen is for 3 todos but as add, remove, complete, and so forth, your own todos will be persisted in the localStorage.
 
-Currently, two official plugins are available:
+There is unit testing for all of the Redux Slice logic, component testing to check the each element renders properly within each component, and changes under the correct circumstances, and also integration testing to check these elements render under the relevant user events.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+The styling should be responsive to all sizes from a large laptop through to an iPhone SE.

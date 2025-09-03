@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+// sets a standard set of todos for the application
 export const initialState = {
   todos: [
     { id: 1, name: 'wake up', completed: false },
@@ -14,21 +15,26 @@ const todoSlice = createSlice({
   name: 'todos',
   initialState: initialState,
   reducers: {
+    // pushes new todo to the todos array
     addTodo: (state, action) => {
       state.todos.push(action.payload);
     },  
+    // clears the todos array
     clearTodos: (state) => {
       state.todos = [];
     },
+    // finds a todo by Id and filters it out of the todos array
     deleteTodo: (state, action) => {
       state.todos = state.todos.filter(todo => todo.id !== action.payload);
     },
+    // finds a todo by id and changes it's completed status
     toggleTodo: (state, action) => {
       const todo = state.todos.find(todo => todo.id === action.payload);
       if (todo) {
         todo.completed = !todo.completed;
       }
     },
+    // finds a todo by id and sets the todoToEdit property to the todo with matching id and changes the status of toggleEdit 
     editTodo: (state, action) => {
       const todo = state.todos.find(todo => todo.id === action.payload);
       if (todo) {
@@ -36,6 +42,7 @@ const todoSlice = createSlice({
         state.toggleEdit = !state.toggleEdit;
       }
     },
+    // uses the id of todoToEdit to find the matching todo in the todos array and update it's name with the payload
     submitEdit: (state, action) => {
       const index = state.todos.findIndex(todo => todo.id === state.todoToEdit.id);
       if (index !== -1) {

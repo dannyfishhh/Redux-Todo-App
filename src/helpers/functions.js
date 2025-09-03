@@ -1,3 +1,7 @@
+// helper functions for getting the localStorage
+// if it fails or is empty, returns undefined
+// if it's there, it returns the stored data in the form of an object that the configureStore method recognises
+
 const loadState = () => {
   try {
     const serializedState = localStorage.getItem('todos');

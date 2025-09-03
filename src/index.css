@@ -1,3 +1,5 @@
+/* Global Styles */
+
 html{
     font-size: clamp(16px, 2vw, 20px);
 }
@@ -15,12 +17,16 @@ html, body {
     width: 100%;
 }
 
+/* Background */
+
 body {
     background-color: #b393dd;
     display: flex;
     align-items: center;
     justify-content: center;
 }
+
+/* Off-White Container */
 
 .container {
     display: flex;
@@ -34,11 +40,15 @@ body {
     max-width: 34rem;
 }
 
+/* Header */
+
 h1 {
     text-decoration: underline;
     font-size: 1.4rem;
     padding-bottom: 1rem;
 }
+
+/* Add and Edit Todo Components */
 
 .add-todo {
     display: flex;
@@ -95,6 +105,8 @@ input[type='text']:hover {
     margin-top: 0.5rem;
 }
 
+/* TodoItem Component */
+
 .todo-item {
     display: flex;
     justify-content: space-between;
@@ -142,6 +154,7 @@ p {
     transform: scale(0.98);    /* slight shrink effect */
 }
 
+/* Clear button */
 
 .clear-button {
     height: 1.25rem;
@@ -165,6 +178,8 @@ p {
     background-color: #b0b0b0;
     color: white;
 }
+
+/* Completed Component */
 
 .completed-message {
     text-align: center;
