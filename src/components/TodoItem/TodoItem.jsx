@@ -1,9 +1,9 @@
+import { useDispatch } from 'react-redux'
+import React from 'react';
 import delete_bin from '../../assets/delete_bin.svg'
 import edit_square from '../../assets/edit_square.svg'
 import tick_circle from '../../assets/tick_circle.svg'
-import { useDispatch } from 'react-redux'
 import { toggleTodo, deleteTodo, editTodo } from '../../store/Slices/TodoSlice.jsx'
-import React from 'react';
 
 function TodoItem (props) {
 

@@ -1,10 +1,11 @@
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+
 import AddTodo from './components/AddTodo/AddTodo.jsx';
 import EditTodo from './components/EditTodo/EditTodo.jsx';
 import TodoItem from './components/TodoItem/TodoItem.jsx';
-import { useSelector, useDispatch } from 'react-redux';
-import { clearTodos } from './store/Slices/TodoSlice.jsx';
-import React from 'react';
 import Completed from './components/Completed/Completed.jsx';
+import { clearTodos } from './store/Slices/TodoSlice.jsx';
 
 function App() {
 
@@ -24,6 +25,10 @@ function App() {
 
   // returns components based on the store state
   return (
+    // Classnames get complicated with big apps, its good to be specific as you might ahve lots of containers
+    // So <component>__<section>__<name> is a simple way to distinguish e.g.
+    // app__container
+    // app__container__header
       <div className='container'>
         <div className='header'>
           <h1>My Todo List</h1>

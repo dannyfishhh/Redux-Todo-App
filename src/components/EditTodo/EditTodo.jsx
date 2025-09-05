@@ -1,7 +1,7 @@
+import React from 'react';
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { submitEdit } from '../../store/Slices/TodoSlice';
-import React from 'react';
 
 // a very similar component to AddTodo, but seperated for cleaner code
 
@@ -26,6 +26,7 @@ function EditTodo() {
       }
 
       // if valid todo entered, dispatch the submitEdit action with the inputValue, or display error message
+      // Validate empty space --> I can add "     " blank inputs with spaces. Maybe trim the input
       const handleOnSubmit = (e) => {
             e.preventDefault();
             if (inputValue.length > 0) {
