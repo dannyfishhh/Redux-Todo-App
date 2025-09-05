@@ -1,6 +1,6 @@
-import todoSlice from './Slices/TodoSlice.jsx';
 import { configureStore } from '@reduxjs/toolkit';
 import { loadState, saveState } from '../helpers/functions.js';
+import todoSlice from './Slices/TodoSlice.jsx';
 
 // the store creation has been refactored to a factory for easier testing of the localStorage functionality
 export const storeCreator = () => {
