@@ -38,11 +38,11 @@ function EditTodo() {
 
       return (
             <>
-                  <form className='add-todo' onSubmit={handleOnSubmit}>
-                        <input value={inputValue} style={error ? { borderColor: 'red', borderWidth: '2px', borderStyle: 'solid' } : {}} onClick={handleClick} onChange={handleOnChange} type='text' placeholder='Edit todo' className='todo-input'></input>
-                        <button type='submit' className='submit-button'>Save</button>
+                  <form className='EditTodo__form' onSubmit={handleOnSubmit}>
+                        <input value={inputValue} style={error ? { borderColor: 'red', borderWidth: '2px', borderStyle: 'solid' } : {}} onClick={handleClick} onChange={handleOnChange} type='text' placeholder='Edit todo' className='EditTodo__form__todo-input'></input>
+                        <button type='submit' className='EditTodo__form__submit-button'>Save</button>
                   </form>
-                  {error && <p className='error-message'>{error}</p>}
+                  {error && <p className='EditTodo__error-message'>{error}</p>}
             </>
       );
 }

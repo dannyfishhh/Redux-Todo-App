@@ -28,7 +28,7 @@ body {
 
 /* Off-White Container */
 
-.container {
+.app__container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -50,7 +50,8 @@ h1 {
 
 /* Add and Edit Todo Components */
 
-.add-todo {
+.AddTodo__form,
+.EditTodo__form {
     display: flex;
     width: 95%;
     max-width: 26rem;
@@ -74,7 +75,8 @@ input[type='text']:hover {
     border:#1e1f26 1px solid;
 }
 
-.submit-button {
+.AddTodo__form__submit-button,
+.EditTodo__form__submit-button {
     height: 2rem;
     max-width: 5rem;
     padding: 0 0.5rem;
@@ -89,17 +91,20 @@ input[type='text']:hover {
     font-size: 0.9rem;
 }
 
-.submit-button:hover{
+.AddTodo__form__submit-button:hover,
+.EditTodo__form__submit-button:hover {
     border:#1e1f26 1px solid;
 }
 
-.submit-button:active{
+.AddTodo__form__submit-button:active,
+.EditTodo__form__submit-button:active {
     background-color: #7c3bbd; /* darker purple */
     transform: scale(0.98);    /* slight shrink effect */
     border:#1e1f26 2px solid;
 }
 
-.error-message {
+.AddTodo__error-message,
+.EditTodo__error-message {
     color: red;
     font-size: 0.8rem;
     margin-top: 0.5rem;
@@ -107,7 +112,7 @@ input[type='text']:hover {
 
 /* TodoItem Component */
 
-.todo-item {
+.TodoItem__item {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -127,7 +132,7 @@ p {
     max-width: 20rem;
 }
 
-.buttons {
+.TodoItem__buttons {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -135,7 +140,7 @@ p {
     flex: 1;
 }
 
-.small_button {
+.TodoItem__buttons__small-button {
     background-color: transparent;
     border: none;
     cursor: pointer;
@@ -144,19 +149,19 @@ p {
     width: 1.5rem;
 }
 
-.small_button:hover {
+.TodoItem__buttons__small-button:hover {
     background-color: #d9d9d9;
     border-radius: 0.25rem;
 }
 
-.small_button:active {
+.TodoItem__buttons__small-button:active {
     background-color: #b0b0b0; /* darker gray */
     transform: scale(0.98);    /* slight shrink effect */
 }
 
 /* Clear button */
 
-.clear-button {
+.app__container__clear-button {
     height: 1.25rem;
     margin-top: 1rem;
     padding: 0 0.25rem;
@@ -168,11 +173,11 @@ p {
     cursor: pointer;
 }
 
-.clear-button:hover {
+.app__container__clear-button:hover {
     border:#1e1f26 1px solid;
 }
 
-.clear-button:active{
+.app__container__clear-button:active{
     transform: scale(0.98);
     border:#1e1f26 2px solid;
     background-color: #b0b0b0;
@@ -181,7 +186,7 @@ p {
 
 /* Completed Component */
 
-.completed-message {
+.Completed__message {
     text-align: center;
     margin-top: 1rem;
 }
@@ -190,6 +195,6 @@ h2 {
     font-size: 1.1rem;
 }
 
-.completed-text {
+.Completed__text {
     font-size: 0.85rem
 }

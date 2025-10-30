@@ -26,7 +26,7 @@ The styling should be responsive to all sizes from a large laptop through to an 
         <li><a href="#prerequisites">Prerequisites</a></li>
       </ul>
     </li>
-    <li><a href="#documents">Deployment</a></li>
+    <li><a href="#deployment">Deployment</a></li>
     <li><a href="#functional">Functional Components</a></li>
     <ul>
         <li><a href="#unit">Unit Testing</a></li>

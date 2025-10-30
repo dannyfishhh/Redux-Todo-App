@@ -114,4 +114,20 @@ describe("TodoSlice", () => {
     const updatedState = mockStore.getState().todos;
     expect(updatedState.todos.find(todo => todo.id === todoToEdit.id).name).toBe('new task name');
   });
-});
+
+  it("should reset edit state if the deleted todo is being edited", () => {
+
+    // set up
+    const todoToEditAndDelete = { id: 1, name: 'wake up', completed: false };
+
+    // dispatch editTodo action followed by deleteTodo
+    mockStore.dispatch(editTodo(todoToEditAndDelete.id));
+    mockStore.dispatch(deleteTodo(todoToEditAndDelete.id));
+
+    // result
+    const updatedState = mockStore.getState().todos;
+    expect(updatedState.toggleEdit).toBe(true);
+    expect(updatedState.todoToEdit).toEqual({});
+  });
+  
+  });

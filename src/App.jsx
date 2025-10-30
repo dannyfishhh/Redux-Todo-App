@@ -25,12 +25,8 @@ function App() {
 
   // returns components based on the store state
   return (
-    // Classnames get complicated with big apps, its good to be specific as you might ahve lots of containers
-    // So <component>__<section>__<name> is a simple way to distinguish e.g.
-    // app__container
-    // app__container__header
-      <div className='container'>
-        <div className='header'>
+      <div className='app__container'>
+        <div className='app__container__header'>
           <h1>My Todo List</h1>
         </div>
         {toggleEdit ? <AddTodo /> : <EditTodo />}
@@ -39,7 +35,7 @@ function App() {
         ))}
         
         {isTodos ?
-          <button className='clear-button' onClick={handleClear}>Clear</button>
+          <button className='app__container__clear-button' onClick={handleClear}>Clear</button>
           : <Completed />
         }
       </div>
