@@ -1,10 +1,11 @@
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+
 import AddTodo from './components/AddTodo/AddTodo.jsx';
 import EditTodo from './components/EditTodo/EditTodo.jsx';
 import TodoItem from './components/TodoItem/TodoItem.jsx';
-import { useSelector, useDispatch } from 'react-redux';
-import { clearTodos } from './store/Slices/TodoSlice.jsx';
-import React from 'react';
 import Completed from './components/Completed/Completed.jsx';
+import { clearTodos } from './store/Slices/TodoSlice.jsx';
 
 function App() {
 
@@ -24,8 +25,8 @@ function App() {
 
   // returns components based on the store state
   return (
-      <div className='container'>
-        <div className='header'>
+      <div className='app__container'>
+        <div className='app__container__header'>
           <h1>My Todo List</h1>
         </div>
         {toggleEdit ? <AddTodo /> : <EditTodo />}
@@ -34,7 +35,7 @@ function App() {
         ))}
         
         {isTodos ?
-          <button className='clear-button' onClick={handleClear}>Clear</button>
+          <button className='app__container__clear-button' onClick={handleClear}>Clear</button>
           : <Completed />
         }
       </div>

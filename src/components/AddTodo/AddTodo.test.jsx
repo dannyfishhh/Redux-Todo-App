@@ -69,6 +69,24 @@ describe("AddTodo Component", () => {
         expect(errorMessage).toBeInTheDocument();
     });
 
+    it("displays error message when an input of only spaces is submitted", async () => {
+
+        // render
+        renderComponent();
+
+        // set up
+        const input = screen.getByPlaceholderText("Add todo");
+        const button = screen.getByText("Add");
+
+        // simulates user submitting an empty todo
+        await userEvent.type(input, "   ");
+        await userEvent.click(button);
+
+        // results
+        const errorMessage = screen.getByText("Please enter a todo item");
+        expect(errorMessage).toBeInTheDocument();
+    });
+
     it("dispatches addTodo action when valid input is submitted", async () => {
 
         // render

@@ -24,7 +24,12 @@ const todoSlice = createSlice({
       state.todos = [];
     },
     // finds a todo by Id and filters it out of the todos array
+    // also checks if the deleted todo is the one being edited and resets edit state if so
     deleteTodo: (state, action) => {
+      if (state.todoToEdit.id === action.payload) {
+        state.toggleEdit = true;
+        state.todoToEdit = {};
+      }
       state.todos = state.todos.filter(todo => todo.id !== action.payload);
     },
     // finds a todo by id and changes it's completed status
