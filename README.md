@@ -33,7 +33,7 @@ The styling makes use of global class name best practices, and avoids class coll
 
 ## Tech Stack
 
-- TypeScript - I refactored this application from Java
+- TypeScript - I refactored this application from JavaScript as a learning exercise due to the prominence of TS skills required in the job market.
 - Vite — extremely fast set up time and dev server updates, which keeps the feedback loop short while developing.
 - React — allows for fast and non-refreshing UX.
 - Redux - offers a seperate state management tool which allows for cleaner code when sharing state throughout the application
