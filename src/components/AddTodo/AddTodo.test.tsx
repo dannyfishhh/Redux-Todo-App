@@ -1,41 +1,37 @@
 import { afterEach, beforeEach, describe, it, expect, vi } from "vitest";
 import { render, screen } from '@testing-library/react';
 import { configureStore } from "@reduxjs/toolkit";
-import todoSlice from '../../store/Slices/TodoSlice.jsx';
-import { addTodo }  from '../../store/Slices/TodoSlice.jsx';
-import AddTodo from "./AddTodo.jsx";
+import type { EnhancedStore } from "@reduxjs/toolkit";
+import todoSlice from '../../store/Slices/TodoSlice';
+import { addTodo } from '../../store/Slices/TodoSlice';
+import AddTodo from "./AddTodo";
 import { Provider } from "react-redux";
 import '@testing-library/jest-dom';
 import React from "react";
 import userEvent from "@testing-library/user-event";
 
-
-// sets a mock store that can be created and removed before each test to avoid state changes leaking into one another
-
-let mockStore;
+let mockStore: EnhancedStore;
 
 beforeEach(() => {
-    mockStore = configureStore({
-        reducer: {
-            todos: todoSlice
-        }
-    });
+  mockStore = configureStore({
+    reducer: {
+      todos: todoSlice
+    }
+  });
 });
 
 afterEach(() => {
-    mockStore = null;
-    localStorage.clear();
+  mockStore = null as any;
+  localStorage.clear();
 });
 
-// helper function to render the component with the provider
-
 const renderComponent = () => {
-    render(
-        <Provider store={mockStore}>
-            <AddTodo />
-        </Provider>
-    );
-}
+  render(
+    <Provider store={mockStore}>
+      <AddTodo />
+    </Provider>
+  );
+};
 
 describe("AddTodo Component", () => {
 

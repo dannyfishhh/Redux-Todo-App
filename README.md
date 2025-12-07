@@ -33,6 +33,7 @@ The styling makes use of global class name best practices, and avoids class coll
 
 ## Tech Stack
 
+- TypeScript - I refactored this application from Java
 - Vite — extremely fast set up time and dev server updates, which keeps the feedback loop short while developing.
 - React — allows for fast and non-refreshing UX.
 - Redux - offers a seperate state management tool which allows for cleaner code when sharing state throughout the application
@@ -76,7 +77,7 @@ yarn preview     # preview the production build locally
 
 - `src/` — main source files
 	- `components/` - each of the React UI components (each component has a folder containing a react `.jsx` file, and a testing `.test.jsx` file)
-	- `helpers/` - the localStorage helper functions
+	- `helpers/` - the localStorage helper functions, typed customHook wrappers for Redux, and custome Types
   - `store/` - all Redux Store and Slice creation and testing files.
 	- `App.jsx`, `main.jsx` - entry point.
 

@@ -1,18 +1,16 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { loadState, saveState } from '../helpers/functions.js';
-import todoSlice from './Slices/TodoSlice.jsx';
+import { loadState, saveState } from '../helpers/functions';
+import todoSlice from './Slices/TodoSlice';
 
-// the store creation has been refactored to a factory for easier testing of the localStorage functionality
 export const storeCreator = () => {
 
   const localStorageState = loadState();
 
-  // if the localStorageState is undefined, it will render as standard with the initialState of the TodoSlice
   const store = configureStore({
     reducer: {
       todos: todoSlice
     },
-    preloadedState: localStorageState
+    preloadedState: localStorageState ? { todos: localStorageState } : undefined
   });
 
   // every time a change to the store occurs, the todos slice is saved to localStorage
@@ -24,7 +22,9 @@ export const storeCreator = () => {
   return store;
 };
 
-// this is the actual instance of the real store being used in the application being created
 const store = storeCreator();
+
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;
 
 export default store;
